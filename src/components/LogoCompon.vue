@@ -12,7 +12,8 @@ export default {
 
 <style lang="scss">
   img{
-    width: 30px;
+    display: flex;
+    width: 35px;
     margin: 5px 0;
   }
 </style>
