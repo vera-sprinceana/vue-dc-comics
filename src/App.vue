@@ -1,14 +1,18 @@
 <template>
   <div id="app" >
       <header class="container text">
-        <LogoCompon/>
+        <LogoDcNav/>
         <NavbarMenu/>
       </header>
       <main>
-        <div class="b-shop">
+        <div class="hero">
+         
+        </div>
+        <div class="bg-black">
           <div class="container">
-            <h3>--> Content goes here </h3>
+             <ProductsComp/>
           </div>
+         
         </div>
         <div class="bg-blue">
           <div class="container">
@@ -21,7 +25,7 @@
           <div class="container">
             <div class="col">
               <FooterComp1/>
-              <LogoFooterComp/>
+              
             </div>   
           </div>
         </div>
@@ -30,25 +34,25 @@
             <FooterComp2/>
           </div>
         </div>
-        
       </footer>
   </div>
 </template>
 <script>
+import LogoDcNav from './components/LogoDcNav.vue';
 import NavbarMenu from './components/NavbarMenu.vue';
-import LogoCompon from './components/LogoCompon.vue';
+import ProductsComp from './components/ProductsComp.vue';
 import IconComp from './components/IconComp.vue';
 import FooterComp1 from './components/FooterComp1.vue';
 import FooterComp2 from './components/FooterComp2.vue';
-import LogoFooterComp from './components/LogoFooterComp.vue';
+
 export default {
   name: 'App',
   components: {
+    LogoDcNav,
     NavbarMenu,
-    LogoCompon,
+    ProductsComp,
     IconComp,
     FooterComp1,
-    LogoFooterComp,
     FooterComp2,
   }
 }
@@ -56,6 +60,11 @@ export default {
 
 <style scoped lang="scss">
 @import './style/variable.scss';
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 #app{
   width: 100%;
 }
@@ -64,11 +73,15 @@ export default {
   margin: 0 auto;
   display: flex;
 };
-.b-shop{
-  background: $bg-shop;
-  padding: 10px;
-  display: flex;
+.hero{
+  background-image: url('./assets/img/jumbotron.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 45vh;
 };
+.bg-black{
+  background-color: $bg-shop;
+}
 h3{
   color: $color-white;
 }
@@ -86,7 +99,7 @@ h3{
   justify-content: space-between;
 };
 .col{
-  width:calc(100% / 2) ;
+  width:100%;
   display: flex;
   justify-content: space-between;
 };

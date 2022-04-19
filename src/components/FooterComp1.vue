@@ -2,76 +2,198 @@
     <footer>
         <div class="colum">
             <div class="col-3">
-                <ul>
-                    <h4>DC COMICS</h4>
-                    <li>Character</li>
-                    <li>Comics</li>
-                    <li>Movies</li>
-                    <li>Tv</li>
-                    <li>Games</li>
-                    <li>Viodes</li>
-                    <li>News</li>  
+                <ul v-for="(element, index) in menuDcLeft" :key='index'>
+                    <h5> {{element.titolo}} </h5>
+                    <li >
+                        <a href="#">{{element.name}}</a>
+                    </li>
                 </ul>
-                <ul>
-                    <h4>SHOP</h4>
-                    <li>Shop DC</li>
-                    <li>Shop DC Collectibles</li> 
+            </div>
+            <div class="col-3">
+                <ul v-for="(element, index) in menuCenter" :key='index'>
+                    <h5> {{element.titolo}} </h5>
+                    <li >
+                       <a href="#">{{element.name}}</a> 
+                    </li>
                 </ul> 
             </div>
             <div class="col-3">
-                <ul>
-                    <h4>DC</h4>
-                    <li>Terms Of Use</li>
-                    <li>Privacy Policy (New)</li>
-                    <li>Ad Choices</li>
-                    <li>Advertising</li>
-                    <li>Jobs</li>
-                    <li>Subscriptions</li>
-                    <li>Talent Workshops</li>
-                    <li>CPSC Certificates</li>
-                    <li>Ratings</li>
-                    <li>Shop Help</li>
-                    <li>Contact Us</li>
+                <ul v-for="(element, index ) in  menuRight" :key='index'>
+                    <h5> {{element.titolo}} </h5>
+                    <li >
+                        <a href="#">{{element.name}}</a>
+                    </li>
                 </ul> 
+            
             </div>
-            <div class="col-3">
-                <ul>
-                    <h4>SITES</h4>
-                    <li>DC</li>
-                    <li>MAD Magazine</li>
-                    <li>DC KIds</li>
-                    <li>DC Universe</li>
-                    <li>DC Power Visa</li>
-                </ul> 
-            </div>
+             <LogoFooterComp/>
         </div>   
+
     </footer>
+   
 </template>
 
 <script>
+import LogoFooterComp from '../components/LogoFooterComp'
 export default {
-  name: 'FooterComp1'
+  name: 'FooterComp1',
+  components:{
+      LogoFooterComp,
+  },
+   data() {
+    return {
+      menuDcLeft:[
+          {
+              titolo: 'DC COMICS',
+              url:'/DCCOMICS'
+          },
+          {
+              name:'Character',
+              url:'/Character'
+          },
+          {
+              name:'Comics',
+              url:'/Comics'
+          },
+          {
+              name:'Movies',
+              url:'/Movies'
+          },
+          {
+              name:'Tv',
+              url:'/Tv'
+          },
+          {
+              name:'Games',
+              url:'/Games'
+          },
+          {
+              name:'Videos',
+              url:'/Videos'
+          },
+          {
+              name:'News',
+              url:'/News'
+          },
+           {
+              titolo: 'SHOP',
+              url:'/SHOP'
+          },
+          {
+              name:'Shop DC',
+              url:'/Shop DC'
+          },
+          {
+              name:'Shop DC Collectibles',
+              url:'/Shop DC Collectibles'
+          },
+          
+      ],
+      menuCenter:[
+           {
+              titolo: 'DC',
+          },
+           {
+              name:'Terms Of Use',
+              url:'/TermsOfUse'
+          },
+           {
+              name:'Privacy Policy (New)',
+              url:'/PrivacyPolicy(New)'
+          },
+           {
+              name:'Ad Choices',
+              url:'/AdChoices'
+          },
+           {
+              name:'Advertising',
+              url:'/Advertising'
+          },
+           {
+              name:'Jobs',
+              url:'/Jobs'
+          },
+           {
+              name:'Subscriptions',
+              url:'/Subscriptions'
+          },
+           {
+              name:'Talent Workshops',
+              url:'/TalentWorkshops'
+          },
+           {
+              name:'CPSC Certificates',
+              url:'/CPSCCertificates'
+          },
+           {
+              name:'Ratings',
+              url:'/Ratings'
+          },
+           {
+              name:'Shop Help',
+              url:'/ShopHelp'
+          },
+           {
+              name:'Contact Us',
+              url:'/ContactUs'
+          },
+      ],
+      menuRight:[ 
+           {
+              titolo: 'SITES',
+          },
+        {
+            name:'DC',
+            url:'/DC'
+        },
+        {
+            name:'MAD Magazine',
+            url:'/MADMagazine'
+        },
+        {
+            name:'DC KIds',
+            url:'/DCKIds'
+        },
+        {
+            name:'DC Universe',
+            url:'/DCUniverse'
+        },
+        {
+            name:'DC Power Visa',
+            url:'/DCPowerVisa'
+        },
+          
+      ]
+    }
+
+    }
 }
 </script>
 
 <style scoped lang="scss">
 @import '../style/variable.scss';
     .colum{
-        display: flex;   
+        display: flex;  
     };
     .col-3{
-        width:190px;
-    }
+        width: calc((100% - 300px)/3 );
+    };
     ul{
         list-style-type: none; 
         text-align: left;
-        h4{
-            color:$color-white;
-        }
-        li{
+    };  
+    li{
+        color:#8b8b8b;
+        text-align: left;  
+        a{
+            text-decoration: none;
             color:#8b8b8b;
-            padding-bottom: 5px;
-            text-align: left;  
+            font-size: 0.8em;
         }
-    }   
+    };
+     h5{
+
+        color:$color-white;
+    };
+    
 </style>

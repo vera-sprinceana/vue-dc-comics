@@ -1,35 +1,46 @@
 <template>
-   <div>
+   <div class="nav">
       <ul>
-          <li>
-              <img src="../assets/img/buy-comics-digital-comics.png" alt="logo-dc">
-              digital comics
+          <li v-for="(element, index) in icons" :key="index">
+              <img :src="element.url" alt="">
+             
+              <h4>{{element.titolo}}</h4>
           </li>
-          <li>
-              <img src="../assets/img/buy-comics-merchandise.png" alt="logo-dc">
-              dc merchandise
-          </li>
-          <li>
-              <img src="../assets/img/buy-comics-subscriptions.png" alt="logo-dc">
-              subscription
-          </li>
-          <li>
-              <img src="../assets/img/buy-comics-shop-locator.png" alt="logo-dc">
-              comics shop locator
-          </li>
-          <li>
-              <img src="../assets/img/buy-dc-power-visa.svg" alt="logo-dc">
-              dc power visa
-          </li>
-
       </ul>
    </div>
 </template>
 
 <script>
 export default {
-  name: 'IconComp'
+  name: 'IconComp',
+ data() {
+    return {
+        icons: [
+            {
+                url: require('../assets/img/buy-comics-digital-comics.png'),
+                titolo:'digital comics'
+            },
+            {
+                url: require('../assets/img/buy-comics-merchandise.png'),
+                titolo:'dc merchandise'
+            },
+            {
+                url:require('../assets/img/buy-comics-subscriptions.png'),
+                titolo:'subscription'
+            },
+            {
+                url: require('../assets/img/buy-comics-shop-locator.png'),
+                titolo:'dcomics shop locator'
+            },
+            {
+                url: require('../assets/img/buy-dc-power-visa.svg'),
+                titolo:'dc power visa'
+            },
+        ]
+    }
+} 
 }
+
 </script>
 
 <style scoped lang="scss">
@@ -37,19 +48,24 @@ export default {
 ul{
     list-style-type: none;
     display: flex;
-    
+    justify-content: space-between;
     li{
         display: flex;
         align-items: center;
         text-transform: uppercase;
-        margin-right: 50px;
-        font-size: 0.7em;
-        color:$color-white;
-        img{
-            margin-right: 10px;
-            
+        padding-right: 25px ;
+        h4{  
+            color:$color-white;
+            margin-left: 10px;  
+            font-size: 0.7em;
         }
+       img{
+           width: 30px;
+       }
     }
 }
-    
+    .nav{
+        display: flex;
+       
+    }
 </style>

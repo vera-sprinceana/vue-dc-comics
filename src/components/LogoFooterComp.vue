@@ -1,6 +1,6 @@
-<template>
-   <div>
-       <img src="../assets/img/dc-logo-bg.png" alt="">
+<template >
+   <div class="dc-background">
+      <img src="../assets/img/dc-logo-bg.png" alt="">
    </div>
 </template>
 
@@ -12,10 +12,8 @@ export default {
 
 <style scoped lang="scss">
   img{
-    display: flex;
-    width: 30em;
-    align-items: flex-end;
-    margin-top: -80px;
    
+    border: 1px solid red;
+    width: 100%;
   }
 </style>

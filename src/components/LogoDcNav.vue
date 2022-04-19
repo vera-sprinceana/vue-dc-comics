@@ -1,12 +1,12 @@
 <template>
    <div>
-       <img src="../assets/img/dc-logo.png" alt="">
+       <img src="../assets/img/dc-logo.png" alt="logo">
    </div>
 </template>
 
 <script>
 export default {
-  name: 'LogoCompon'
+  name: 'LogoDcNav'
 }
 </script>
 

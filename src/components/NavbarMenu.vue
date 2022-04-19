@@ -1,17 +1,8 @@
 <template>
-   <div>
-      <LogoCompon/> 
-       <ul>
-           <li>characters</li>
-           <li class="active">comics</li>
-           <li>movies</li>
-           <li>tv</li>
-           <li>games</li>
-           <li>collectibles</li>
-           <li>videos</li>
-           <li>fans</li>
-           <li>news</li>
-           <li>shop</li>
+   <div class="navbar">
+       <ul v-for="(element, index) in navbarList" :key='index'>
+           <li>{{element.name}}</li>
+           <li class="active"></li>
        </ul>
    </div>
 </template>
@@ -20,19 +11,57 @@
 
 
 export default {
-  name: 'NavbarMenu'
+  name: 'NavbarMenu',
+  data(){
+      return {
+           navbarList:[
+          {
+                name:'characters',
+          },
+          {
+                name:'comics',
+          },
+          {
+                name:'movies',
+          },
+          {
+                name:'tv',
+          },
+          {
+                name:'games',
+          },
+          {
+                name:'videos',
+          },
+          {
+                name:'fans',
+          },
+          {
+                name:'news',
+          },
+          {
+                name:'shop',
+          }
+      ]
+      }
+  }
 }
 </script>
 
 <style scoped lang="scss">
     @import '../style/variable.scss';
+    .navbar{
+        widows: 70%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
     ul{
         list-style-type: none;
-        display: flex;
-       
+        display: flex; 
     };
-    ul li{
-        margin:0 10px;
+     li{
+        font-size: 0.8em;
         text-transform: uppercase;
         font-weight: bold;
     };
